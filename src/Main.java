@@ -1,12 +1,15 @@
 public class Main {
     public static void main(String[] args) {
-        int curentAcount = 200;
-        int refill = 1300;
-        int bonusDivider = 100;
-        int bonus = 0;
-        if (refill >=1000)
-            bonus = refill/bonusDivider;
-        int finalAmount = curentAcount+refill+bonus;
-        System.out.println(finalAmount);
+        BonusService service = new BonusService();
+        long bonus = service.calculate(102000,false);
+        System.out.println(bonus);
+        long bonus1 = service.calculate(100050,false);
+        System.out.println(bonus1);
+        long bonus2 = service.calculate(102000,true);
+        System.out.println(bonus2);
+        long bonus3 = service.calculate(100050,true);
+        System.out.println(bonus3);
     }
 }
+
+
